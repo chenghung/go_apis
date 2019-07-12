@@ -4,7 +4,7 @@ development:
   host: "localhost"
   port: "3306"
   user: "root"
-  password: "root"
+  password: "mysql"
 
 test:
   dialect: "mysql"
@@ -20,7 +20,7 @@ test:
   host: "localhost"
   port: "3306"
   user: "root"
-  password: "root"
+  password: "mysql"
 
 production:
   #
@@ -33,7 +33,7 @@ production:
   host: {{envOr "DATABASE_HOST" "localhost"}}
   port: {{envOr "DATABASE_PORT" "3306"}}
   user: {{envOr "DATABASE_USER" "root"}}
-  password: {{envOr "DATABASE_PASSWORD" "root"}}
+  password: {{envOr "DATABASE_PASSWORD" "mysql"}}
   #
   # And you can also override connection parameters by setting it under options.
   #
