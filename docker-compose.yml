@@ -1,0 +1,14 @@
+mysql:
+  image: mariadb:10.3.6
+  environment:
+    MYSQL_ROOT_PASSWORD: mysql
+  ports:
+    - 3306:3306
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin:4.8.0-3
+  links:
+    - mysql
+  environment:
+    PMA_HOST: mysql
+  ports:
+    - 8888:80
