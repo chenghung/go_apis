@@ -1,7 +1,7 @@
 development:
   dialect: "mysql"
   database: "go_apis_development"
-  host: "localhost"
+  host: "127.0.0.1"
   port: "3306"
   user: "root"
   password: "mysql"
@@ -17,7 +17,7 @@ test:
   # In this case, the URL must contain all required connection parameters.
   #
   database: "go_apis_test"
-  host: "localhost"
+  host: "127.0.0.1"
   port: "3306"
   user: "root"
   password: "mysql"
