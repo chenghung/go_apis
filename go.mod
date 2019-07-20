@@ -25,6 +25,6 @@ require (
 	github.com/markbates/grift v1.0.6
 	github.com/rs/cors v1.6.0
 	github.com/spf13/afero v1.2.1 // indirect
-	github.com/stripe/stripe-go v61.13.0+incompatible // indirect
+	github.com/stripe/stripe-go v61.13.0+incompatible
 	github.com/unrolled/secure v1.0.0
 )
