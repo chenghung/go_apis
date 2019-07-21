@@ -11,6 +11,11 @@ type createChargeRequest struct {
 	AmountInCents int64 `json:"amount_in_cents"`
 }
 
+type createChargeResponse struct {
+	ID            string `json:id`
+	AmountInCents int64  `json:"amount_in_cents"`
+}
+
 func init() {
 	key := envy.Get("STRIPE_API_KEY", "")
 	stripe.Key = key
@@ -39,5 +44,10 @@ func CreateChargeHandler(c buffalo.Context) error {
 		return err
 	}
 
-	return c.Render(201, r.JSON(ch))
+	response := createChargeResponse{
+		ID:            ch.ID,
+		AmountInCents: ch.Amount,
+	}
+
+	return c.Render(201, r.JSON(response))
 }
