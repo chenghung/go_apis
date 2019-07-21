@@ -27,4 +27,5 @@ require (
 	github.com/spf13/afero v1.2.1 // indirect
 	github.com/stripe/stripe-go v61.13.0+incompatible
 	github.com/unrolled/secure v1.0.0
+	gopkg.in/h2non/gock.v1 v1.0.15
 )
