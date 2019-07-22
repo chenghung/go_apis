@@ -11,8 +11,6 @@ func (as *ActionSuite) Test_CreateChargeHandler() {
 		AmountInCents: 9991,
 	}
 
-	defer gock.Off()
-
 	gock.New("https://api.stripe.com/").
 		Post("/v1/charges").
 		Reply(201).
