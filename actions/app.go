@@ -1,10 +1,15 @@
 package actions
 
 import (
+	"log"
+
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/buffalo/worker"
 	"github.com/gobuffalo/envy"
+	"github.com/gobuffalo/gocraft-work-adapter"
 	forcessl "github.com/gobuffalo/mw-forcessl"
 	paramlogger "github.com/gobuffalo/mw-paramlogger"
+	"github.com/gomodule/redigo/redis"
 	"github.com/unrolled/secure"
 
 	"go_apis/models"
@@ -19,6 +24,7 @@ import (
 // application is being run. Default is "development".
 var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
+var w worker.Worker
 
 // App is where all routes and middleware for buffalo
 // should be defined. This is the nerve center of your
@@ -42,6 +48,20 @@ func App() *buffalo.App {
 				cors.Default().Handler,
 			},
 			SessionName: "_go_apis_session",
+
+			// background job
+			Worker: gwa.New(gwa.Options{
+				Pool: &redis.Pool{
+					MaxActive: 5,
+					MaxIdle:   5,
+					Wait:      true,
+					Dial: func() (redis.Conn, error) {
+						return redis.Dial("tcp", ":6379")
+					},
+				},
+				Name:           "myapp",
+				MaxConcurrency: 25,
+			}),
 		})
 
 		// Automatically redirect to SSL
@@ -74,5 +94,15 @@ func forceSSL() buffalo.MiddlewareFunc {
 	return forcessl.Middleware(secure.Options{
 		SSLRedirect:     ENV == "production",
 		SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
+	})
+}
+
+func init() {
+	w = App().Worker
+
+	w.Register("send_email", func(args worker.Args) error {
+		log.Println("send email to: %v", args["user_id"])
+
+		return nil
 	})
 }

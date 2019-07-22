@@ -2,6 +2,7 @@ package actions
 
 import (
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/buffalo/worker"
 	"github.com/gobuffalo/envy"
 	"github.com/stripe/stripe-go"
 	"github.com/stripe/stripe-go/charge"
@@ -48,6 +49,14 @@ func CreateChargeHandler(c buffalo.Context) error {
 		ID:            ch.ID,
 		AmountInCents: ch.Amount,
 	}
+
+	w.Perform(worker.Job{
+		Queue:   "default",
+		Handler: "send_email",
+		Args: worker.Args{
+			"user_id": 123,
+		},
+	})
 
 	return c.Render(201, r.JSON(response))
 }
