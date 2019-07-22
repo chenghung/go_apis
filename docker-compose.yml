@@ -12,3 +12,8 @@ phpmyadmin:
     PMA_HOST: mysql
   ports:
     - 8888:80
+redis:
+  image: redis:3.0.7
+  ports:
+    - 6379:6379
+
