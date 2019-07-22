@@ -9,6 +9,7 @@ require (
 	github.com/gobuffalo/envy v1.7.0
 	github.com/gobuffalo/events v1.4.0 // indirect
 	github.com/gobuffalo/genny v0.3.0 // indirect
+	github.com/gobuffalo/gocraft-work-adapter v0.0.0-20180714213200-7d6504f1dffe
 	github.com/gobuffalo/httptest v1.4.0 // indirect
 	github.com/gobuffalo/makr v1.2.0 // indirect
 	github.com/gobuffalo/meta v0.1.0 // indirect
@@ -21,8 +22,12 @@ require (
 	github.com/gobuffalo/pop v4.11.2+incompatible
 	github.com/gobuffalo/suite v2.8.1+incompatible
 	github.com/gobuffalo/x v0.0.0-20190224155809-6bb134105960
+	github.com/gocraft/work v0.5.1 // indirect
+	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/jackc/pgx v3.3.0+incompatible // indirect
+	github.com/markbates/going v1.0.3 // indirect
 	github.com/markbates/grift v1.0.6
+	github.com/robfig/cron v1.2.0 // indirect
 	github.com/rs/cors v1.6.0
 	github.com/spf13/afero v1.2.1 // indirect
 	github.com/stripe/stripe-go v61.13.0+incompatible
