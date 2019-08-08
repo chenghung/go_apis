@@ -6,7 +6,7 @@ import (
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/buffalo/worker"
 	"github.com/gobuffalo/envy"
-	"github.com/gobuffalo/gocraft-work-adapter"
+	gwa "github.com/gobuffalo/gocraft-work-adapter"
 	forcessl "github.com/gobuffalo/mw-forcessl"
 	paramlogger "github.com/gobuffalo/mw-paramlogger"
 	"github.com/gomodule/redigo/redis"
@@ -101,7 +101,7 @@ func init() {
 	w = App().Worker
 
 	w.Register("send_email", func(args worker.Args) error {
-		log.Println("send email to: %v", args["user_id"])
+		log.Printf("send email to: %v", args["user_id"])
 
 		return nil
 	})
