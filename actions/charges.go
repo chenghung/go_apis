@@ -1,6 +1,8 @@
 package actions
 
 import (
+	"go_apis/models"
+
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/buffalo/worker"
 	"github.com/gobuffalo/envy"
@@ -40,6 +42,15 @@ func CreateChargeHandler(c buffalo.Context) error {
 	}
 
 	ch, err := charge.New(&chargeParams)
+
+	if err != nil {
+		return err
+	}
+
+	charge := models.Charge{}
+	charge.ExternalID = ch.ID
+	charge.AmountInCents = ch.Amount
+	err = models.DB.Create(&charge)
 
 	if err != nil {
 		return err
