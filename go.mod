@@ -3,16 +3,12 @@ module go_apis
 go 1.12
 
 require (
+	cloud.google.com/go v0.36.0 // indirect
 	github.com/codegangsta/negroni v1.0.0 // indirect
-	github.com/gobuffalo/buffalo v0.14.6
-	github.com/gobuffalo/buffalo-pop v1.13.0
+	github.com/gobuffalo/buffalo v0.14.7
+	github.com/gobuffalo/buffalo-pop v1.16.0
 	github.com/gobuffalo/envy v1.7.0
-	github.com/gobuffalo/events v1.4.0 // indirect
-	github.com/gobuffalo/genny v0.3.0 // indirect
 	github.com/gobuffalo/gocraft-work-adapter v0.0.0-20180714213200-7d6504f1dffe
-	github.com/gobuffalo/httptest v1.4.0 // indirect
-	github.com/gobuffalo/makr v1.2.0 // indirect
-	github.com/gobuffalo/meta v0.1.0 // indirect
 	github.com/gobuffalo/mw-contenttype v0.0.0-20190224202710-36c73cc938f3
 	github.com/gobuffalo/mw-csrf v0.0.0-20190129204204-25460a055517 // indirect
 	github.com/gobuffalo/mw-forcessl v0.0.0-20190224202501-6d1ef7ffb276
@@ -24,12 +20,10 @@ require (
 	github.com/gobuffalo/x v0.0.0-20190224155809-6bb134105960
 	github.com/gocraft/work v0.5.1 // indirect
 	github.com/gomodule/redigo v2.0.0+incompatible
-	github.com/jackc/pgx v3.3.0+incompatible // indirect
 	github.com/markbates/going v1.0.3 // indirect
-	github.com/markbates/grift v1.0.6
+	github.com/markbates/grift v1.1.0
 	github.com/robfig/cron v1.2.0 // indirect
 	github.com/rs/cors v1.6.0
-	github.com/spf13/afero v1.2.1 // indirect
 	github.com/stripe/stripe-go v61.13.0+incompatible
 	github.com/unrolled/secure v1.0.0
 	gopkg.in/h2non/gock.v1 v1.0.15
