@@ -1,6 +1,6 @@
 -- MariaDB dump 10.17  Distrib 10.4.6-MariaDB, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: go_apis_development
+-- Host: 127.0.0.1    Database: go_apis_production
 -- ------------------------------------------------------
 -- Server version	10.3.6-MariaDB-1:10.3.6+maria~jessie
 
@@ -54,4 +54,4 @@ CREATE TABLE `schema_migration` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-15 23:09:52
+-- Dump completed on 2019-08-09  0:53:22
