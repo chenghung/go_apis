@@ -30,7 +30,7 @@ production:
   #
   dialect: "mysql"
   database: "go_apis_production"
-  host: {{envOr "DATABASE_HOST" "localhost"}}
+  host: {{envOr "DATABASE_HOST" "127.0.0.1"}}
   port: {{envOr "DATABASE_PORT" "3306"}}
   user: {{envOr "DATABASE_USER" "root"}}
   password: {{envOr "DATABASE_PASSWORD" "mysql"}}
