@@ -3,6 +3,7 @@ module go_apis
 go 1.12
 
 require (
+	cloud.google.com/go v0.36.0 // indirect
 	github.com/codegangsta/negroni v1.0.0 // indirect
 	github.com/gobuffalo/buffalo v0.14.9
 	github.com/gobuffalo/buffalo-pop v1.16.0
