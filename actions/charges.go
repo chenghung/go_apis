@@ -15,7 +15,7 @@ type createChargeRequest struct {
 }
 
 type createChargeResponse struct {
-	ID            string `json:id`
+	ID            string `json:"id"`
 	AmountInCents int64  `json:"amount_in_cents"`
 }
 
