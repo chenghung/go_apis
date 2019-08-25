@@ -4,7 +4,7 @@ go 1.12
 
 require (
 	github.com/codegangsta/negroni v1.0.0 // indirect
-	github.com/gobuffalo/buffalo v0.14.7
+	github.com/gobuffalo/buffalo v0.14.9
 	github.com/gobuffalo/buffalo-pop v1.16.0
 	github.com/gobuffalo/envy v1.7.0
 	github.com/gobuffalo/gocraft-work-adapter v0.0.0-20180714213200-7d6504f1dffe
